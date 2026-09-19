@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Free Online Invoice Generator for Freelancers</title>
+  <meta name="description" content="Create, customize, and download professional PDF invoices instantly in your browser. Free for freelancers and contractors.">
+  <link rel="stylesheet" href="style.css">
+  <!-- html2pdf Library for Client-Side PDF Generation -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+  <!-- Google AdSense Script Placeholder -->
+  <!-- <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script> -->
+</head>
+<body>
+
+  <header class="app-header">
+    <h1>Fast Invoice Generator</h1>
+    <p>Create & Download Professional PDF Invoices Instantly</p>
+  </header>
+
+  <main class="container">
+    <!-- Top Ad Banner Placeholder -->
+    <div class="ad-slot ad-top">
+      <p>[ Google AdSense Banner Area ]</p>
+    </div>
+
+    <!-- Main Tool Interface -->
+    <div class="tool-wrapper">
+      <form id="invoice-form" class="invoice-card">
+        
+        <!-- Header Info -->
+        <div class="grid-2">
+          <div>
+            <label for="company-name">Your Company / Name</label>
+            <input type="text" id="company-name" placeholder="e.g. John Doe Design" required>
+            
+            <label for="company-email">Your Email</label>
+            <input type="email" id="company-email" placeholder="john@example.com">
+          </div>
+          <div>
+            <label for="invoice-number">Invoice #</label>
+            <input type="text" id="invoice-number" value="INV-1001" required>
+            
+            <label for="invoice-date">Date</label>
+            <input type="date" id="invoice-date" required>
+          </div>
+        </div>
+
+        <hr class="divider">
+
+        <!-- Bill To Section -->
+        <div class="grid-2">
+          <div>
+            <label for="client-name">Bill To (Client Name)</label>
+            <input type="text" id="client-name" placeholder="e.g. Acme Corp" required>
+          </div>
+          <div>
+            <label for="client-email">Client Email</label>
+            <input type="email" id="client-email" placeholder="billing@acmecorp.com">
+          </div>
+        </div>
+
+        <hr class="divider">
+
+        <!-- Dynamic Items Table -->
+        <h3>Line Items</h3>
+        <table id="items-table">
+          <thead>
+            <tr>
+              <th>Description</th>
+              <th width="100">Qty</th>
+              <th width="120">Rate ($)</th>
+              <th width="120">Total ($)</th>
+              <th width="50"></th>
+            </tr>
+          </thead>
+          <tbody id="items-list">
+            <!-- Items injected by JS -->
+          </tbody>
+        </table>
+
+        <button type="button" id="add-item-btn" class="btn btn-secondary">+ Add Item</button>
+
+        <hr class="divider">
+
+        <!-- Totals & Calculations -->
+        <div class="totals-wrapper">
+          <div class="totals-row">
+            <span>Subtotal:</span>
+            <span id="subtotal-val">$0.00</span>
+          </div>
+          <div class="totals-row">
+            <label for="tax-rate">Tax Rate (%):</label>
+            <input type="number" id="tax-rate" value="0" min="0" step="0.1" style="width: 80px;">
+          </div>
+          <div class="totals-row total-final">
+            <strong>Grand Total:</strong>
+            <strong id="grand-total-val">$0.00</strong>
+          </div>
+        </div>
+
+        <!-- Action Button -->
+        <div class="actions">
+          <button type="button" id="download-pdf-btn" class="btn btn-primary">Download PDF Invoice</button>
+        </div>
+
+      </form>
+    </div>
+
+    <!-- Bottom Ad Banner Placeholder -->
+    <div class="ad-slot ad-bottom">
+      <p>[ Google AdSense Banner Area ]</p>
+    </div>
+
+    <!-- Contextual SEO Content (Crucial for AdSense Approval) -->
+    <article class="seo-content">
+      <h2>How to Use This Free Invoice Generator</h2>
+      <p>Generating a professional invoice for your freelance business or micro-agency takes under 60 seconds using this online tool:</p>
+      <ol>
+        <li>Fill in your business details along with your client's billing information.</li>
+        <li>Add line items describing the services provided, quantities, and hourly or fixed rates.</li>
+        <li>Adjust the tax rate percentage if applicable to your local tax jurisdiction.</li>
+        <li>Click <strong>Download PDF Invoice</strong> to render a clean PDF directly inside your browser.</li>
+      </ol>
+
+      <h3>Frequently Asked Questions</h3>
+      <p><strong>Is my data secure?</strong> Yes. This invoice generator operates 100% client-side. None of your client details or billing data are uploaded to external servers.</p>
+      <p><strong>Can I use this for non-US currencies?</strong> Absolutely. Enter your numerical rates directly into the input fields, and the totals will compute automatically.</p>
+    </article>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
